@@ -29,7 +29,7 @@ in_array('memcache', $output)
 	or die('Memcache PHP module doesn\'t appear to be installed. It is needed.');
 
 $MEMCACHE = new Memcache();
-$MEMCACHE->pconnect(SERVER, PORT);
+$MEMCACHE->connect(SERVER, PORT);
 
 //set timezone
 date_default_timezone_set(isset($config['MISC']['PHP_TIMEZONE'])

@@ -36,3 +36,13 @@ Current Features:
 	* Deleting an item from the cache by key.
 
 	* Password login (password set in config file).
+	
+	UROGI: 6.2013
+	
+	* Multiple (all) item invalidation
+	
+	* Showing refresh countdown seconds
+	
+	* Showing piece of values in table list
+	
+	* Displaying of item detail
