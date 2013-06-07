@@ -51,11 +51,13 @@ $slabs = $MEMCACHE->getStats('items');
 
 foreach (array_keys($slabs['items']) as $slab_no){
 	$items = $MEMCACHE->getStats('cachedump', $slab_no, $slabs['items'][$slab_no]['number']);
-	foreach(array_keys($items) as $item_key){
+	foreach(array_keys($items) as $item_key) {
+		$item_value_piece = substr(htmlspecialchars($MEMCACHE->get($item_key)), 0, 500);
 		$cache->addCacheItem(new Item($item_key,
 		                              $slab_no,
 		                              $items[$item_key][1],
-		                              $items[$item_key][0] ));
+		                              $items[$item_key][0],
+									  $item_value_piece));
 	}
 
 }

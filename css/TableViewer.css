@@ -86,6 +86,10 @@ table#TableViewer tr td.expired {
 	color:red;
 }
 
+table#TableViewer tr td.never {
+	color:green;
+}
+
 table#TableViewer tr td.key {
 }
 
@@ -102,4 +106,15 @@ table#TableViewer tr td.expiry_date {
 
 table#TableViewer tr td.expires_in {
 	text-align:center;
+}
+
+
+.key_color {
+	color:green;
+}
+.html_value_piece_color {
+	color:#FFDD00;
+}
+.html_value_color {
+	color:orange;
 }

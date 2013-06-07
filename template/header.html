@@ -6,9 +6,9 @@
 	<title>MemcacheViewer</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/TableViewer.css" />
-        <script src="scripts/jquery.js" type="text/javascript"></script>
-        <script src="scripts/reload.js" type="text/javascript"></script>
-
+	<script src="scripts/jquery.js" type="text/javascript"></script>
+	<script src="scripts/reload.js" type="text/javascript"></script>
+	<script>setInterval(function(){refreshCounter();},1000);</script>
 </head>
 
 <body>
@@ -18,8 +18,10 @@
 	<h1>MemcacheViewer</h1>
 	<input type="button" onclick="location.href='logout.php'" value="Logout" />
 	<div id="settings">
-		<label for="refresh_rate">Refresh Rate (secs)</label><input type="text" onchange="setRefreshInterval()" value="1" id="refresh_rate" name="refresh_rate" />
+		<label for="refresh_rate">Refresh Rate (secs)</label><input type="text" onchange="setRefreshInterval()" value="3" id="refresh_rate" name="refresh_rate" />
 	</div>
 </div>
 
 <div id="content">
+
+

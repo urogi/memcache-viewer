@@ -6,13 +6,15 @@ class Item {
 	private $expiration_timestamp;
 	private $slab;
 	private $size;
+	private $valuePiece;
 
-	public function __construct($key, $slab, $expiration_timestamp, $size){
+	public function __construct($key, $slab, $expiration_timestamp, $size, $valuePiece){
 
 		$this->key = $key;
 		$this->slab = $slab;
 		$this->expiration_timestamp = $expiration_timestamp;
 		$this->size = $size;
+		$this->valuePiece = $valuePiece;
 
 	}//constructor
 
@@ -28,6 +30,10 @@ class Item {
 		return $this->size;
 	}
 
+	public function getValuePiece(){
+		return $this->valuePiece;
+	}
+	
 	public function getTimestamp(){
 		return $this->expiration_timestamp;
 	}
@@ -52,7 +58,11 @@ class Item {
 
 		$total = $timestamp_to - $timestamp_from;
 
-		if ($total < 0) return "expired";
+		if (($total <= 0) && ($total > -100)) {
+			return "expired";
+		} else if ($total < -100) {
+			return "never";
+		}
 
 		$days = floor($total / (24 * 60 * 60));
 		$total -= $days * (24 * 60 * 60);
