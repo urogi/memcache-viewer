@@ -39,8 +39,12 @@ echo '<hr/><b>KEY:</b><hr/>';
 echo '<font class="key_color">' . $key . '</font>';
 echo '<br/><br/>';
 echo '<hr/><b>VALUE:</b><hr/>';
-echo '<font>' . $value . '</font>';
-echo '<hr/><b>htmlspecialchars(VALUE):</b><hr/>';
-echo '<font class="html_value_color">' . htmlspecialchars($value) . '</font>';
+if (is_array($value)) {
+	echo '<font>' . var_dump($value) . '</font>';
+} else {
+	echo '<font>' . $value . '</font>';
+	echo '<hr/><b>htmlspecialchars(VALUE):</b><hr/>';
+	echo '<font class="html_value_color">' . htmlspecialchars($value) . '</font>';
+}
 
 ?>
